@@ -15,3 +15,5 @@ This script downloads reviews for a specific game from Steam and saves them to a
 1. **Install `steamreviews`**: Make sure you have the `steamreviews` library installed. You can install it using pip:
    ```bash
    pip install steamreviews
+2. **Modify the File Path**: Update the `file_path` variable to specify the directory where you want to save the reviews.
+3. **Run the Script**: Execute the script to download and save the reviews.

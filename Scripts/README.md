@@ -21,28 +21,34 @@ This script downloads reviews for a specific game from Steam and saves them to a
 
 # Filter Braille Comments
 
-This Python script filters Braille comments from a text file and saves the filtered comments to another file.
+This Python script filters out Braille comments from a text file and saves the filtered comments to another file. The script is designed to handle Braille symbols in the comments and removes lines that contain specific Braille symbols.
+
+## How It Works
+
+The script follows these steps to filter Braille comments:
+
+1. **Open File:** It opens the specified text file that contains comments, including Braille symbols.
+
+2. **Filter Comments:** Using a filtering function, it separates comments that contain Braille symbols from those that don't. The filtering is based on a specific keyword or Braille symbol.
+
+3. **Save Filtered Comments:** The comments that pass the filter (i.e., those without Braille symbols) are saved to a new file, while the comments containing Braille symbols are excluded.
 
 ## Usage
 
 1. Clone this repository to your local machine.
 
-2. Make sure you have Python installed on your system.
+2. Ensure you have Python installed on your system.
 
-3. Run the `filtrar_comentarios.py` script providing the path to the text file containing the Braille comments.
+3. Run the `filtrar_comentarios.py` script, providing the path to the text file containing the comments.
 
     ```bash
     python filtrar_comentarios.py
     ```
 
-    Ensure that the `file_path` variable in the script is set to the correct path to the input file.
+    Make sure to set the `file_path` variable in the script to the correct path of your input file.
 
-4. The script will filter the Braille comments and save the filtered comments to a file named `filtered_Braille_comments.txt` in the same directory as the input file.
-
-## Details
-
-The script features a `filtrar_comentarios` function that takes a list of comments and a keyword to filter comments containing that keyword. It uses this function to filter the Braille comments from the provided text file.
+4. The script will filter out Braille comments and save the filtered comments to a file named `filtered_Braille_comments.txt` in the same directory as the input file.
 
 ## Dependencies
 
-The script uses the `os` module to work with file paths.
+The script uses the `os` module to handle file paths.

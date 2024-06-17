@@ -19,30 +19,69 @@ This script downloads reviews for a specific game from Steam and saves them to a
 3. **Run the Script**: Execute the script to download and save the reviews.
 
 
+
 # Filter Braille Comments
 
-This Python script filters Braille comments from a text file and saves the filtered comments to another file.
+This Python script filters comments from a text file based on the presence of Braille symbols and saves the filtered comments to another file.
+
+## How It Works
+
+The script performs the following steps:
+
+1. **Open the File:** Reads the contents of a specified text file containing comments.
+
+2. **Filter Comments:** Filters out comments that contain a specified Braille symbol.
+
+3. **Save Filtered Comments:** Saves the comments that do not contain the Braille symbol to a new file.
 
 ## Usage
 
-1. Clone this repository to your local machine.
+1. **Clone this repository** to your local machine.
 
-2. Make sure you have Python installed on your system.
+2. **Ensure you have Python installed** on your system.
 
-3. Run the `filtrar_comentarios.py` script providing the path to the text file containing the Braille comments.
+3. **Place your input text file** containing comments in the specified path.
+
+4. **Run the script `filtrar_comentarios.py`:**
 
     ```bash
     python filtrar_comentarios.py
     ```
 
-    Ensure that the `file_path` variable in the script is set to the correct path to the input file.
+5. **Set the `file_path` variable** in the script to the correct path of your input file.
 
-4. The script will filter the Braille comments and save the filtered comments to a file named `filtered_Braille_comments.txt` in the same directory as the input file.
+6. **The script will filter out Braille comments** and save the filtered comments to a file named `filtered_Braille_comments.txt` in the same directory as the input file.
 
-## Details
 
-The script features a `filtrar_comentarios` function that takes a list of comments and a keyword to filter comments containing that keyword. It uses this function to filter the Braille comments from the provided text file.
 
-## Dependencies
+# Filter Short Comments
 
-The script uses the `os` module to work with file paths.
+This Python script filters comments from a text file based on their length, specifically targeting comments shorter than 5 characters. It saves the filtered comments to another file.
+
+## How It Works
+
+The script performs the following steps:
+
+1. **Open the File:** Reads the contents of a specified text file containing comments.
+
+2. **Filter Comments by Length:** Filters out comments that are shorter than 5 characters. Additional filtering criteria are applied based on the length and the Unicode value of the first character of each comment.
+
+3. **Save Filtered Comments:** Saves the comments that pass the filter to a new file.
+
+## Usage
+
+1. **Clone this repository** to your local machine.
+
+2. **Ensure you have Python installed** on your system.
+
+3. **Place your input text file** containing comments in the specified path.
+
+4. **Run the script `filtrar_comentarios.py`:**
+
+    ```bash
+    python filtrar_comentarios.py
+    ```
+
+5. **Set the `file_path` variable** in the script to the correct path of your input file.
+
+6. **The script will filter out short comments** and save the filtered comments to a file named `filtered_Short_comments.txt` in the same directory as the input file.

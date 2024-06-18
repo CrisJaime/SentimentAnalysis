@@ -15,10 +15,9 @@ This script downloads reviews for a specific game from Steam and saves them to a
 1. **Install `steamreviews`**: Make sure you have the `steamreviews` library installed. You can install it using pip:
    ```bash
    pip install steamreviews
+   ```
 2. **Modify the File Path**: Update the `file_path` variable to specify the directory where you want to save the reviews.
 3. **Run the Script**: Execute the script to download and save the reviews.
-
-
 
 # Filter Braille Comments
 
@@ -33,29 +32,7 @@ The script performs the following steps:
 2. **Filter Comments:** Filters out comments that contain a specified Braille symbol.
 
 3. **Save Filtered Comments:** Saves the comments that do not contain the Braille symbol to a new file.
-This Python script filters out Braille comments from a text file and saves the filtered comments to another file. The script is designed to handle Braille symbols in the comments and removes lines that contain specific Braille symbols.
-
-## Usage
-
-1. **Clone this repository** to your local machine.
-
-2. **Ensure you have Python installed** on your system.
-
-3. **Place your input text file** containing comments in the specified path.
-2. Ensure you have Python installed on your system.
-
-4. **Run the script `filtrar_comentarios.py`:**
-3. Run the `filtrar_comentarios.py` script, providing the path to the text file containing the comments.
-
-    ```bash
-    python filtrar_comentarios.py
-    ```
-
-5. **Set the `file_path` variable** in the script to the correct path of your input file.
-    Make sure to set the `file_path` variable in the script to the correct path of your input file.
-
-6. **The script will filter out Braille comments** and save the filtered comments to a file named `filtered_Braille_comments.txt` in the same directory as the input file.
-
+   This Python script filters out Braille comments from a text file and saves the filtered comments to another file. The script is designed to handle Braille symbols in the comments and removes lines that contain specific Braille symbols.
 
 
 # Filter Short Comments
@@ -72,25 +49,44 @@ The script performs the following steps:
 
 3. **Save Filtered Comments:** Saves the comments that pass the filter to a new file.
 
-## Usage
 
-1. **Clone this repository** to your local machine.
+# Filter Extra Comments
 
-2. **Ensure you have Python installed** on your system.
+This script filters comments based on specific criteria related to the ASCII values of the characters. It reads comments from a file, applies the filtering logic, and then writes the filtered comments to a new file.
 
-3. **Place your input text file** containing comments in the specified path.
+1. **Function Definition**:
 
-4. **Run the script `filtrar_comentarios.py`:**
+   - `filtrar_comments(comentarios)`: This function processes a list of comments, filtering out those that meet certain criteria based on the ASCII values of their characters.
 
-    ```bash
-    python filtrar_comentarios.py
-    ```
+2. **Reading the Input File**:
 
-5. **Set the `file_path` variable** in the script to the correct path of your input file.
+   - The script reads comments from `CommentsTXT/filtered_Short_comments.txt` and counts the number of comments.
 
-6. **The script will filter out short comments** and save the filtered comments to a file named `filtered_Short_comments.txt` in the same directory as the input file.
-4. The script will filter out Braille comments and save the filtered comments to a file named `filtered_Braille_comments.txt` in the same directory as the input file.
+3. **Applying the Filter**:
 
-## Dependencies
+   - The comments are processed using the `filtrar_comments` function.
 
-The script uses the `os` module to handle file paths.
+4. **Writing the Output File**:
+   - The filtered comments are written to a new file `CommentsTXT/filtered_Extra_comments.txt`.
+
+## Filtering Criteria
+
+The filtering function `filtrar_comments` applies the following rules to filter out comments:
+
+1. **Unicode Value >= 800**:
+    - If the first character of the comment has a Unicode value of 800 or higher, the comment is filtered out.
+
+2. **Whitespace Characters**:
+    - If the first character is a space (`32`), newline (`10`), or period (`46`), the comment is filtered out.
+
+3. **Extended ASCII Range**:
+    - If the first character's ASCII value is between 128 and 255, the comment is filtered out.
+
+4. **Other Characters**:
+    - Comments that do not meet any of the above criteria are kept.
+
+## Output
+
+- The script outputs the total number of comments after the initial filter, the total number of comments that passed the filter, and the total number of comments that were eliminated.
+- The filtered comments are saved to `CommentsTXT/filtered_Extra_comments.txt`.
+

@@ -1,10 +1,12 @@
 # Import the os module to work with file paths
 import os
 
+# Function to filter comments
+
+
 def filtar_commentarios(comentarios):
     segundoFiltro = []
     segundosEliminados = []
-    i = 1
 
     # Filter comments by length and characters
     for comment in comentarios:
@@ -23,7 +25,6 @@ def filtar_commentarios(comentarios):
                     segundosEliminados.append(comment)
         else:
             segundoFiltro.append(comment)
-        i += 1
 
     return segundoFiltro, segundosEliminados
 
@@ -35,7 +36,7 @@ output_directory = 'CommentsTXT/'
 # Open the file and read its contents as a list of lines
 with open(file_path, 'r', encoding='utf-8') as f:
     lineas_archivo = f.readlines()
-    
+
 # Count the number of comments
 num_comments = len(lineas_archivo)
 
@@ -44,12 +45,15 @@ print("==="*10)
 print("[INFO] Number of comments after first filter:", num_comments)
 print("==="*10)
 
-comentariosFiltrados,comentariosEliminados=filtar_commentarios(lineas_archivo)
+comentariosFiltrados, comentariosEliminados = filtar_commentarios(
+    lineas_archivo)
 
-print("[INFO] Total number of comments that passed the filter:", len(comentariosFiltrados))
+print("[INFO] Total number of comments that passed the filter:",
+      len(comentariosFiltrados))
 print("[INFO] Total number of comments eliminated:", len(comentariosEliminados))
 
-output_file_path = os.path.join(output_directory, 'filtered_Short_comments.txt')
+output_file_path = os.path.join(
+    output_directory, 'filtered_Short_comments.txt')
 
 with open(output_file_path, 'w', encoding='utf-8') as output_file:
     output_file.writelines(comentariosFiltrados)

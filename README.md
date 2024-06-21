@@ -73,3 +73,58 @@ The purpose of this script is to perform sentiment analysis on a collection of c
 4. **Check Results**:
    - The sentiment analysis results will be saved in `Results/sentiment_analysis_NLTK_results.txt`.
    - The bar chart will be saved as `Results/bar_chart_NLTK.png`.
+
+
+
+# Sentiment Analysis Using VADER
+
+## Purpose
+
+The purpose of this script is to perform sentiment analysis on a collection of comments using the VADER (Valence Aware Dictionary and sEntiment Reasoner) sentiment analysis tool. The script processes the text, categorizes sentences into positive, negative, or neutral sentiment categories, visualizes the results in a bar chart, and saves both the sentiment analysis results and the chart.
+
+## How It Works
+
+1. **Import Libraries**
+    - `vaderSentiment.vaderSentiment`: For sentiment analysis.
+    - `Counter` from `collections`: For counting occurrences of each sentiment category.
+    - `matplotlib.pyplot`: For creating visualizations.
+
+2. **Read Input File**
+    - Reads the content of the input file (`filtered_Extra_comments.txt`) and combines all lines into a single string.
+
+3. **Preprocess Text**
+    - Splits the text into sentences and removes leading/trailing whitespace.
+
+4. **Sentiment Analysis**
+    - Initializes the Sentiment Intensity Analyzer.
+    - Analyzes the sentiment of each sentence.
+    - Categorizes sentences based on their sentiment scores (positive, negative, neutral).
+
+5. **Calculate and Print Sentiment Statistics**
+    - Calculates the percentage of sentences in each sentiment category.
+    - Prints the total number of sentences in each sentiment category along with their percentages.
+
+6. **Save Results to a Text File**
+    - Saves the counts of positive, negative, and neutral sentences, and the total number of sentences to a text file.
+
+7. **Visualize Results**
+    - Creates a bar chart showing the number of sentences in each sentiment category.
+    - Configures the font size and labels for the chart.
+    - Saves the bar chart as an image file.
+
+## Usage
+
+1. **Install Required Libraries**:
+
+   ```bash
+   pip install vaderSentiment matplotlib
+   ```
+
+2. **Run the Script**:
+   ```bash
+      python sentiment_analysis_vader.py
+   ```
+
+3. **Check Results**:
+   - The sentiment analysis results will be saved in `Results/sentiment_analysis_Vader_results.txt`.
+   - The bar chart will be saved as `Results/bar_chart_vader.png`.

@@ -84,12 +84,13 @@ plt.figure(figsize=(10, 6))  # Set the figure size
 # Create bar chart with specified colors
 plt.bar(labels, sizes, color=['green', 'red', 'blue'])
 plt.xlabel('Sentiment', fontsize=16)  # Set the x-axis label font size
-plt.ylabel('Number of Sentences', fontsize=16)  # Set the y-axis label font size
+# Set the y-axis label font size
+plt.ylabel('Number of Sentences', fontsize=16)
 plt.title('Number of Sentences by Sentiment using vaderSentiment',
           fontsize=18)  # Set the title font size
 # Add data labels above the bars
 for i, value in enumerate(sizes):
-    plt.text(i, value + 150, str(value), ha='center', va='bottom',
+    plt.text(i, value + 100, str(value), ha='center', va='bottom',
              fontsize=12)  # Set the font size of the values
 # Save the bar chart
 plt.savefig('Results/bar_chart_vader.png', dpi=200,

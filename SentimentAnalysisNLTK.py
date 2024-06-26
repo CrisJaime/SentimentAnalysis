@@ -84,21 +84,25 @@ with open(output_file_path, 'w', encoding='utf-8') as output_file:
 print(f"Sentiment analysis results saved to: {output_file_path}")
 
 # Provided data
-labels=['Positive','Negative','Neutral']
-sizes=[len(wordspositiveNLTK),len(wordsnegativeNLTK),len(wordsneutralNLTK)]
-percetages=[percentage_positive,percentage_negative,percentage_neutral]
+labels = ['Positive', 'Negative', 'Neutral']
+sizes = [len(wordspositiveNLTK), len(wordsnegativeNLTK), len(wordsneutralNLTK)]
+percetages = [percentage_positive, percentage_negative, percentage_neutral]
 
 # Global font size configuration
 plt.rc('font', size=14)  # Change the default font size to 14
 
 # Bar Chart
 plt.figure(figsize=(10, 6))  # Set the figure size
-plt.bar(labels, sizes, color=['green', 'red', 'blue'])  # Create bar chart with specified colors
+# Create bar chart with specified colors
+plt.bar(labels, sizes, color=['green', 'red', 'blue'])
 plt.xlabel('Sentiment', fontsize=16)  # Set the x-axis label font size
 plt.ylabel('Number of Words', fontsize=16)  # Set the y-axis label font size
-plt.title('Number of Words by Sentiment using NLTK', fontsize=18)  # Set the title font size
+plt.title('Number of Words by Sentiment using NLTK',
+          fontsize=18)  # Set the title font size
 # Add data labels above the bars
 for i, value in enumerate(sizes):
-    plt.text(i, value + 5000, str(value), ha='center', va='bottom', fontsize=12)  # Set the font size of the values
+    plt.text(i, value + 1000, str(value), ha='center', va='bottom',
+             fontsize=12)  # Set the font size of the values
 # Save the bar chart
-plt.savefig('Results/bar_chart_NLTK.png',dpi=200,bbox_inches='tight',edgecolor='black')
+plt.savefig('Results/bar_chart_NLTK.png', dpi=200,
+            bbox_inches='tight', edgecolor='black')
